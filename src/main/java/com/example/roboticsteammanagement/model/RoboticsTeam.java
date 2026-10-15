@@ -9,9 +9,14 @@ public class RoboticsTeam {
 
     public RoboticsTeam(String teamName, String teamNumber, int numStudents) {
 
+        if (numStudents < 0) {
+            throw new IllegalArgumentException("Number of students cannot be negative");
+        }
+
         this.teamName = teamName;
         this.teamNumber = teamNumber;
         this.numStudents = numStudents;
+
     }
 
     public String getTeamName() {
