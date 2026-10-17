@@ -27,4 +27,16 @@ public class RoboticsTeamTest {
         assertEquals(0,team1.getNumStudents());
     }
 
+    @Test
+    void testSetNumStudents() {
+    RoboticsTeam team1 = new RoboticsTeam("SDMCyberPanthers","15005X",12);
+    team1.setNumStudents(5);
+        assertEquals(5,team1.getNumStudents());
+    }
+    @Test
+    void shouldRejectNegativeStudentsInSetter() {
+    RoboticsTeam team1 = new RoboticsTeam("SDMCyberPanthers","15005X",5);
+    assertThrows(IllegalArgumentException.class, () -> {team1.setNumStudents(-5);});
+    assertEquals(5, team1.getNumStudents());    }
+
 }

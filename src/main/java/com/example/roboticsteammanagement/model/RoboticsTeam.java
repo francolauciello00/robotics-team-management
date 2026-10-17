@@ -28,5 +28,12 @@ public class RoboticsTeam {
     public int getNumStudents() {
         return numStudents;
     }
+    public void setNumStudents(int numStudents) {
+        if (numStudents > 0) {
+            this.numStudents = numStudents;
+        }else  {
+            throw new IllegalArgumentException("Number of students cannot be negative");
+        }
+    }
 
 }
